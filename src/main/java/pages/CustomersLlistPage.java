@@ -35,7 +35,7 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void clickDelete() {
-		getDriver().findElement(By.xpath("//div[@class='floatL']")).click();
+		getDriver().findElement(By.xpath("//a[@class='btn btn-outline-dark delete-selected-button']")).click();
 	}
 
 	public String getMessageConfirmDelete() {
