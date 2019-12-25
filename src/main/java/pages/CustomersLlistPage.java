@@ -25,13 +25,13 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void search(String text) {
-		getDriver().findElement(By.xpath("//div[@class='floatR']/a[3]/i")).click();
+		getDriver().findElement(By.xpath("//div[@class='floatR']//a[3]//i")).click();
 		getDriver().findElement(By.name("search")).sendKeys(text);
 		getDriver().findElement(By.name("search")).sendKeys(Keys.ENTER);
 	}
 
 	public void clickCheck() {
-		getDriver().findElement(By.xpath("//div[@class='scroll-if-required']//table//tbody//tr//td//input")).click();
+		getDriver().findElement(By.xpath("//div[@class='scroll-if-required']//tbody//tr//td//input")).click();
 	}
 
 	public void clickDelete() {
@@ -39,13 +39,11 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public String getMessageConfirmDelete() {
-		return getText(By.xpath(
-				"//*[@class='delete-multiple-confirmation modal fade in show']//p[@class='alert-delete-multiple-one']"));
+		return getText(By.xpath("//p[@class='alert-delete-multiple-one']"));
 	}
 
 	public void clickConfirmDelete() {
-		getDriver().findElement(By.xpath(
-				"//*[@class='delete-multiple-confirmation modal fade in show']//button[@class='btn btn-danger delete-multiple-confirmation-button']"))
+		getDriver().findElement(By.xpath("//button[@class='btn btn-danger delete-multiple-confirmation-button']"))
 				.click();
 	}
 
@@ -71,8 +69,8 @@ public class CustomersLlistPage extends BasePage {
 
 	public void waitMessageConfirmDelete() {
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 5);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
-				"//*[@class='delete-multiple-confirmation modal fade in show']//p[@class='alert-delete-multiple-one']")));
+		wait.until(ExpectedConditions
+				.visibilityOfAllElementsLocatedBy(By.xpath("//p[@class='alert-delete-multiple-one']")));
 	}
 
 	public void waitMessageDelete() {
