@@ -53,8 +53,8 @@ public class CustomerAddPage extends BasePage {
 
 	public void selectFromEmployeer(String text) {
 		getDriver().findElement(By.xpath("//*[@class='chosen-single chosen-default']//span")).click();
-		getDriver().findElement((By.xpath("//*[@id='field_salesRepEmployeeNumber_chosen']//input"))).sendKeys(text);
-		getDriver().findElement((By.xpath("//*[@id='field_salesRepEmployeeNumber_chosen']//ul//li"))).click();
+		getDriver().findElement(By.xpath("//*[@id='field_salesRepEmployeeNumber_chosen']//input")).sendKeys(text);
+		getDriver().findElement(By.xpath("//*[@id='field_salesRepEmployeeNumber_chosen']//ul//li")).click();
 	}
 
 	public void setCreditLimit(String text) {
