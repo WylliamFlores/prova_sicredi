@@ -66,8 +66,7 @@ public class CustomerAddPage extends BasePage {
 	}
 
 	public boolean getMessageSuccess() {
-		return getText(By.xpath("//div[@id='report-success']//p"))
-				.startsWith("Your data has been successfully stored into the database.");
+		return getText(By.xpath("//div[@id='report-success']")).startsWith("Your data has been successfully stored into the database.");
 	}
 
 	public void clickGoBackList() {

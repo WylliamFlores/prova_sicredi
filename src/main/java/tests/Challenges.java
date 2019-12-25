@@ -31,8 +31,7 @@ public class Challenges extends BaseTest {
 		addCustomerPage.setCreditLimit("200");
 		addCustomerPage.clickSave();
 		addCustomerPage.waitMessageSuccess();
-		Assert.assertTrue("Your data has been successfully stored into the database.",
-				addCustomerPage.getMessageSuccess());
+		Assert.assertTrue(addCustomerPage.getMessageSuccess());
 	}
 
 	@Test
