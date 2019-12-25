@@ -66,12 +66,12 @@ public class CustomerAddPage extends BasePage {
 	}
 
 	public boolean getMessageSuccess() {
-		return getText(By.xpath("//div[@id='report-success']")).startsWith("Your data has been successfully stored into the database.");
+		return getText(By.xpath("//div[@id='report-success']"))
+				.startsWith("Your data has been successfully stored into the database.");
 	}
 
 	public void clickGoBackList() {
-		getDriver().findElement(By.xpath("//div[@id='report-success']//p//a[@href='/demo/bootstrap_theme_v4/']"))
-				.click();
+		getDriver().findElement(By.xpath("//a[@href='/demo/bootstrap_theme_v4/']")).click();
 	}
 
 	public void waitMessageSuccess() {
