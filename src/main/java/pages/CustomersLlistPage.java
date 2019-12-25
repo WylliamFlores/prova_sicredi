@@ -21,7 +21,7 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void clickAddCustomer() {
-		getDriver().findElement(By.xpath("//div[@class='floatL t5']//a[@href='/demo/bootstrap_theme_v4/add']")).click();
+		getDriver().findElement(By.xpath("//a[@href='/demo/bootstrap_theme_v4/add']")).click();
 	}
 
 	public void search(String text) {

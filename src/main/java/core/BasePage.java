@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
 
-	public void selectCombo(String id, String valor) {
+	public void selectCombo(String id, String value) {
 		WebElement element = getDriver().findElement(By.id(id));
 		Select combo = new Select(element);
-		combo.selectByVisibleText(valor);
+		combo.selectByVisibleText(value);
 	}
 
 	public void write(String id, String text) {
