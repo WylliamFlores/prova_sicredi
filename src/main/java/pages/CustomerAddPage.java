@@ -3,11 +3,8 @@ package pages;
 import static core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import core.BasePage;
-import core.DriverFactory;
 
 public class CustomerAddPage extends BasePage {
 
@@ -71,11 +68,10 @@ public class CustomerAddPage extends BasePage {
 	}
 
 	public void clickGoBackList() {
-		getDriver().findElement(By.xpath("//a[@href='/demo/bootstrap_theme_v4/']")).click();
+		click_xpath("//a[@href='/demo/bootstrap_theme_v4/']");
 	}
 
 	public void waitMessageSuccess() {
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 5);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='report-success']//p")));
+		wait_visibilityOfAllElementsLocatedBy("//div[@id='report-success']//p");
 	}
 }

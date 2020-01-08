@@ -8,11 +8,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import core.BasePage;
-import core.DriverFactory;
 
 public class CustomersLlistPage extends BasePage {
 
@@ -21,7 +19,7 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void clickAddCustomer() {
-		getDriver().findElement(By.xpath("//a[@href='/demo/bootstrap_theme_v4/add']")).click();
+		click_xpath("//a[@href='/demo/bootstrap_theme_v4/add']");
 	}
 
 	public void search(String text) {
@@ -31,11 +29,11 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void clickCheck() {
-		getDriver().findElement(By.xpath("//div[@class='scroll-if-required']//tbody//tr//td//input")).click();
+		click_xpath("//div[@class='scroll-if-required']//tbody//tr//td//input");
 	}
 
 	public void clickDelete() {
-		getDriver().findElement(By.xpath("//a[@class='btn btn-outline-dark delete-selected-button']")).click();
+		click_xpath("//a[@class='btn btn-outline-dark delete-selected-button']");
 	}
 
 	public String getMessageConfirmDelete() {
@@ -43,8 +41,7 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void clickConfirmDelete() {
-		getDriver().findElement(By.xpath("//button[@class='btn btn-danger delete-multiple-confirmation-button']"))
-				.click();
+		click_xpath("//button[@class='btn btn-danger delete-multiple-confirmation-button']");
 	}
 
 	public String getMessageDelete() {
@@ -68,14 +65,11 @@ public class CustomersLlistPage extends BasePage {
 	}
 
 	public void waitMessageConfirmDelete() {
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 5);
-		wait.until(ExpectedConditions
-				.visibilityOfAllElementsLocatedBy(By.xpath("//p[@class='alert-delete-multiple-one']")));
+		wait_visibilityOfAllElementsLocatedBy("//p[@class='alert-delete-multiple-one']");
 	}
 
 	public void waitMessageDelete() {
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 5);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-				By.xpath("//div[@class='alert alert-success growl-animated animated bounceInDown']//p")));
+		wait_visibilityOfAllElementsLocatedBy(
+				"//div[@class='alert alert-success growl-animated animated bounceInDown']//p");
 	}
 }
